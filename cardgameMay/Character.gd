@@ -7,7 +7,8 @@ var accel = 10
 
 func _physics_process(delta):
 	var direction = Vector3()
-	nav.target_position = Global.target
+	var player_position = get_node("/root/Game/CameraController")
+	nav.target_position = player_position.position
 	
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()

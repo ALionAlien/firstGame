@@ -7,6 +7,7 @@ var prev_rot : float = 0.0
 var rot_difference
 var mouse_prev_rotation
 var mouse_next_rotation
+var camera_rounding = 15
 var camera_size = 25.0
 var target_camera_size = 25.0
 
@@ -39,7 +40,7 @@ func _process(delta):
 		rot_difference = angle_difference(mouse_next_rotation,mouse_prev_rotation)
 		#find the size of mouse movment
 		
-		$".".rotation.y = lerp_angle(deg_to_rad($".".rotation.y),prev_rot + rot_difference,1)
-		print($".".rotation.y)
+		var camera_angle = deg_to_rad(camera_rounding * round(rad_to_deg($".".rotation.y) / camera_rounding))
+		$".".rotation.y = lerp_angle(deg_to_rad(camera_angle),prev_rot + rot_difference,1)
 		#$".".rotation.y = lerp_angle(deg_to_rad($".".rotation.y),rot,1)
 		#rotate the camera controller based on the angle

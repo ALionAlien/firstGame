@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhvi0fi8u2s7w"]
+
+[ext_resource type="Script" path="res://CameraController.gd" id="1_m0l8n"]
+
+[node name="CameraController" type="Node3D"]
+script = ExtResource("1_m0l8n")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.991178, 0, 0, 0, 0.700869, 0.700869, 0, -0.700869, 0.700869, 0.365, 50, 50)
+projection = 1
+size = 25.0
+far = 4005.45
